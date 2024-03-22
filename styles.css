@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: darkslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    border: 3px solid black;
+    max-width: 500px;
+    width: 500px;
+    height: 500px;
+}
+
+#display{
+    height: 100px;
+    margin: 25px 25px 0px 25px;   
+    font-size: 3rem;
+    display: flex;
+    
+    align-items: flex-end;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+
+#keys > *{
+    font-size: 3rem;
+}
