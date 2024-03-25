@@ -1,8 +1,6 @@
 const display = document.getElementById('display');
 
 
-
-
 function appendToDisplay(element){
     display.value += element; 
 }
