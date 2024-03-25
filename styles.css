@@ -26,7 +26,11 @@ body {
     margin: 25px 25px 0px 25px;   
     font-size: 3rem;
     display: flex;
+    justify-content: flex-end;
     align-items: flex-end;
+    background-color: white;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #keys {
@@ -39,12 +43,12 @@ body {
 #keys > *{
     font-size: 3rem;
     border: none;
-}
+    font-family: Arial, Helvetica, sans-serif;}
 
 #resetBtn {
     background-color:rgb(205, 59, 59);
     color: white;
-}
+    font-family: Arial, Helvetica, sans-serif;}
 #resetBtn:hover{
     background-color:rgba(205, 59, 59, 0.74);
 }
@@ -55,7 +59,7 @@ body {
 .operator {
     background-color: rgb(230, 104, 58);
     color: white;
-}
+    font-family: Arial, Helvetica, sans-serif;}
 .operator:hover{
     background-color: rgba(230, 104, 58, 0.785);
 }
