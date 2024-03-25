@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 body {
-    background-color: darkslategray;
+    background-color: rgb(63, 70, 70);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +15,10 @@ body {
     flex-direction: column;
     overflow: hidden;
     border: 3px solid black;
-    max-width: 500px;
+    min-width: 500px;
     width: 500px;
     height: 500px;
+    border-radius: 10px;
 }
 
 #display{
@@ -24,7 +26,6 @@ body {
     margin: 25px 25px 0px 25px;   
     font-size: 3rem;
     display: flex;
-    
     align-items: flex-end;
 }
 
@@ -37,4 +38,16 @@ body {
 
 #keys > *{
     font-size: 3rem;
+    border: none;
+
+}
+
+#resetBtn {
+    background-color:rgb(205, 59, 59);
+    color: white;
+}
+
+.sign {
+    background-color: rgb(230, 104, 58);
+    color: white;
 }
