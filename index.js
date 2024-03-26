@@ -1,47 +1,74 @@
 const display = document.getElementById('display');
-
+let expression = '';
+let result = '';
 
 function appendToDisplay(element){
     display.value += element; 
 }
 
 function add(a,b){
-    return (a+b).toFixed(2);
+
+    return Number(a)+Number(b);
 }
 
 function subtract(a,b){
-    return (a-b).toFixed(2);
+    return Number(a)-Number(b);
 }
 
 function multiply(a,b){
-    return (a*b).toFixed(2);
+    return Number(a)*Number(b);
 }
 
 function divide(a,b){
     if (b === 0) {  
     display.value = 'Error';}  
-    return (a / b).toFixed(2);
+    return Number(a) / Number(b);
 }
 
-function operate(input){
+function operate(){
+    if (display.value === ''){
+        display.value = 'Error'
+    }
     
+    else{
+        expression = display.value;
+        expression = expression.split(/([+*/-])/g);
+    }   
 }
 
 function clearDisplay(){
     display.value = '';
-
 }
 
-//let string = '234+345+232-569555/455*85';
-//const expression = string.split(/([+*/-])/g) 
 
-/*write a function that:
-1. takes a first element of expression
-2. checks an operator
-3. based on an operator does on of operation functions 
-4. updates the result with that evaluated expression
-5. start the loop again till the end of the array
-6. return a final evaluated result
-*/
+function calculate(arr){
+    for(let i=0; i<arr.length+2;i++){
+        let a = arr[0];
+        let operator = arr[1];
+        let b = arr[2];
+        let res = '';
 
+        switch(operator) {
+            case '+':
+                res = add(a,b);
+                break;
+        
+            case '-':
+                res = subtract(a,b);
+                break;
+            
+            case '*':
+                res = multiply(a,b);
+                break;
+            
+            case '/':
+                res = divide(a,b);
+                break;
+            }
+        arr.splice(0,3,res);
+    }
+    return arr
+}
 
+//figure out why calculate function return an empty array
+// add functionality to operate function
