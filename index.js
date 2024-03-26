@@ -6,21 +6,21 @@ function appendToDisplay(element){
 }
 
 function add(a,b){
-    let result = a+b;
-    return result;
+    return (a+b).toFixed(2);
 }
 
 function subtract(a,b){
-    let result = a-b;
-    return result;
+    return (a-b).toFixed(2);
 }
 
 function multiply(a,b){
-
+    return (a*b).toFixed(2);
 }
 
 function divide(a,b){
-
+    if (b === 0) {  
+    display.value = 'Error';}  
+    return (a / b).toFixed(2);
 }
 
 function operate(input){
@@ -43,3 +43,5 @@ function clearDisplay(){
 5. start the loop again till the end of the array
 6. return a final evaluated result
 */
+
+
