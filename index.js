@@ -25,13 +25,22 @@ function divide(a,b){
     return Number(a) / Number(b);
 }
 
-function operate(){
+function operate(calculate){
+    
     if (display.value === ''){
         display.value = 'Error'
     }
     
     else{
         expression = display.value;
+        let lastChar = expression[expression.length-1];
+        if (expression[0]==='*'|| expression[0]==='/'){
+                display.value='Error';
+            }
+       
+        if (lastChar==='+'|| lastChar==='-'|| lastChar==='*'|| lastChar==='/') {
+            expression = expression.slice(0,-1);
+        }
         expression = expression.split(/([+*/-])/g);
     }   
 }
@@ -67,8 +76,12 @@ function calculate(arr){
             }
         arr.splice(0,3,res);
     }
-    return arr
+    return arr.toString();
 }
 
-//figure out why calculate function return an empty array
-// add functionality to operate function
+/*make calculate function wait for operate function to finish
+ 
+*/
+
+
+
