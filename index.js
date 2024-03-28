@@ -25,10 +25,9 @@ function divide(a,b){
     return Number(a) / Number(b);
 }
 
-function operate(calculate){
-    
+function operate(){
     if (display.value === ''){
-        display.value = 'Error'
+        display.value = 'Error';
     }
     
     else{
@@ -41,47 +40,44 @@ function operate(calculate){
         if (lastChar==='+'|| lastChar==='-'|| lastChar==='*'|| lastChar==='/') {
             expression = expression.slice(0,-1);
         }
-        expression = expression.split(/([+*/-])/g);
-    }   
+        expression = expression.split(/([+*/-])/g);  
+        console.log(expression)
+        calculate(expression)
+    }  
 }
 
 function clearDisplay(){
     display.value = '';
 }
 
-
 function calculate(arr){
     for(let i=0; i<arr.length+2;i++){
-        let a = arr[0];
-        let operator = arr[1];
-        let b = arr[2];
-        let res = '';
+            let a = arr[0];
+            let operator = arr[1];
+            let b = arr[2];
+            let res = '';
 
-        switch(operator) {
-            case '+':
-                res = add(a,b);
-                break;
-        
-            case '-':
-                res = subtract(a,b);
-                break;
+            switch(operator) {
+                case '+':
+                    res = add(a,b);
+                    break;
             
-            case '*':
-                res = multiply(a,b);
-                break;
-            
-            case '/':
-                res = divide(a,b);
-                break;
-            }
-        arr.splice(0,3,res);
+                case '-':
+                    res = subtract(a,b);
+                    break;
+                
+                case '*':
+                    res = multiply(a,b);
+                    break;
+                
+                case '/':
+                    res = divide(a,b);
+                    break;
+                }
+            arr.splice(0,3,res);
+            result= arr;
+        }
+        display.value = result;
     }
-    return arr.toString();
-}
-
-/*make calculate function wait for operate function to finish
- 
-*/
-
 
 
